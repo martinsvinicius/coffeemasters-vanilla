@@ -2,6 +2,11 @@ import { loadMenuData } from "./services/menu.js";
 import { Router } from "./services/router.js";
 import { Store } from "./services/store.js";
 
+// Link Web Components
+import { MenuPageElement } from "./components/MenuPage.js";
+import { DetailsPageElement } from "./components/DetailsPage.js";
+import { OrderPageElement } from "./components/OrderPage.js";
+
 window.app = { store: Store, router: Router };
 
 // The "load" event is triggered when EVERYTHING is loaded including fonts, stylesheets, images, videos, etc. Using this event type means we're missing the opportunity to manipulate the DOM earlier.

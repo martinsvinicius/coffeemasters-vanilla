@@ -30,17 +30,14 @@ export const Router = {
 
     switch (route) {
       case "/":
-        pageNode = document.createElement("h1");
-        pageNode.textContent = "Menu";
+        pageNode = document.createElement("menu-page");
         break;
       case "/order":
-        pageNode = document.createElement("h1");
-        pageNode.textContent = "Your Order";
+        pageNode = document.createElement("order-page");
         break;
       default:
         if (route.startsWith("/product/")) {
-          pageNode = document.createElement("h1");
-          pageNode.textContent = "Details";
+          pageNode = document.createElement("details-page");
           const paramId = route.substring(route.lastIndexOf("/") + 1);
           pageNode.dataset.id = paramId;
         }
