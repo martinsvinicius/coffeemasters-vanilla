@@ -3,9 +3,11 @@ import { Router } from "./services/router.js";
 import { Store } from "./services/store.js";
 
 // Link Web Components
-import { MenuPageElement } from "./components/MenuPage.js";
-import { DetailsPageElement } from "./components/DetailsPage.js";
-import { OrderPageElement } from "./components/OrderPage.js";
+import "./components/MenuPage.js";
+import "./components/DetailsPage.js";
+import "./components/OrderPage.js";
+import "./components/ProductItem.js";
+import "./components/CartItem.js";
 
 window.app = { store: Store, router: Router };
 
@@ -16,4 +18,14 @@ window.app = { store: Store, router: Router };
 window.addEventListener("DOMContentLoaded", async () => {
   app.router.init();
   loadMenuData();
+});
+
+window.addEventListener("appcartchange", () => {
+  const badge = document.getElementById("badge");
+  let totalCartCount = 0;
+  for (const [_, cartItem] of app.store.cart) {
+    totalCartCount += cartItem.quantity;
+  }
+  badge.textContent = totalCartCount;
+  badge.hidden = !totalCartCount;
 });
