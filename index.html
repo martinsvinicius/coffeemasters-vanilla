@@ -76,9 +76,9 @@
                 <label for="name">Your Name</label>
                 <input name="name" required />
                 <label for="phone">Your Phone Number</label>
-                <input name="phone" type="tel" />
+                <input name="phone" type="tel" required />
                 <label for="email">Your Email</label>
-                <input name="email" type="email" />
+                <input name="email" type="email" required />
                 <button type="submit">Place Order</button>
             </form>
         </template>
@@ -88,7 +88,7 @@
                 <a
                     href="#"
                     onclick="
-                        app.router.go('/');
+                        app.router.navigate('/');
                         event.preventDefault();
                     "
                     >&lt; Back</a
@@ -108,7 +108,7 @@
                 <p class="name"></p>
                 <p class="price"></p>
                 <p class="toolbar">
-                    <a href="#" class="delete-button"> 🗑️ </a>
+                    <a href="#" class="delete-button">&nbsp;&#10134;</a>
                 </p>
             </li>
         </template>
