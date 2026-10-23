@@ -1,5 +1,11 @@
+const resolveUrl = () => {
+  const isGhPages = window.location.origin.endsWith(".github.io");
+  const rootPath = isGhPages ? "/coffeemasters-vanilla" : "";
+  return window.location.origin + rootPath;
+};
+
 export const API = {
-  url: "http://localhost:3000",
+  url: resolveUrl(),
   fetchMenu: async () => {
     const result = await fetch(`${API.url}/data/menu.json`);
 
